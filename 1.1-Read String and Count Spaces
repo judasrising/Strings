@@ -23,7 +23,6 @@ int count_space(char msg[])
             count++;
     }
     return count;
-
 }
 
 int main()
