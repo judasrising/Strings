@@ -1,0 +1,35 @@
+#include<stdio.h>
+#define N 50
+char string[];
+
+void read(char str[],int n)
+{
+    int ch,i=0;
+    while((ch=getchar())!='\n')
+    {
+        if(i==n)
+            break;
+        str[i]=ch;
+        i++;
+    }
+    str[++i]='\0';
+}
+
+int count_space(char msg[])
+{
+    int i=0,count=0;
+    for(; msg[i]!='\n'; i++){
+        if(msg[i]==' ')
+            count++;
+    }
+    return count;
+
+}
+
+int main()
+{
+    printf("Enter your message: ");
+    read(string,N);
+
+    printf("There are %d spaces in your message.",count_space(string));
+}
