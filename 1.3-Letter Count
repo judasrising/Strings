@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define N 30
+
+int letter_count(char str[])
+{
+    int count=0,i;
+    for(i=0; str[i]!='\0'; i++)
+        if(str[i]!=' ')
+           count++;
+    return count;
+}
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    gets(msg);
+
+    printf("You have entered %d letters.",letter_count(msg));
+}
