@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define N 30
+
+int word_count(char str[])
+{
+    int i,count=0;
+    for(i=0; str[i]!='\0'; i++)
+        if(str[i]==' ')
+           count++;
+    return ++count;
+}
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    gets(msg);
+
+    printf("You have entered %d words.",word_count(msg));
+}
