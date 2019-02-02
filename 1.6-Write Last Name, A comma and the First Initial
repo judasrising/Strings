@@ -1,0 +1,17 @@
+#include<stdio.h>
+#define N 30
+
+int main()
+{
+    char name,ch;
+    printf("Enter your first and last name: ");
+    scanf("%c",&name);
+
+    while((ch=getchar())!=' ');
+
+    char str[N];
+
+    gets(str);
+    printf("%s, %c.",str,name);
+
+}
