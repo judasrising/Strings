@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+    printf("Enter your message: ");
+    int i,ch;
+    float word=0, count=0;
+    while((ch=getchar())!='\n')
+    {
+        if(ch==' ')
+            word++;
+        else
+            count++;
+    }
+
+    printf("Average word length= %.1f",count/++word);
+}
