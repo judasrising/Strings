@@ -18,3 +18,28 @@ int main()
 
     printf("You have entered %d words.",word_count(msg));
 }
+
+
+******************** With Pointers ***********************
+
+#include<stdio.h>
+#define N 50
+
+int count_words(char *s)
+{
+    int count=0;
+    for(; *s!='\0'; s++)
+        if(*s==' ')
+           count++;
+
+    return ++count;
+}
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    gets(msg);
+
+    printf("There are %d words in your message.",count_words(msg));
+}
