@@ -1,0 +1,20 @@
+//Find the days of week which starts with T
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char days[7][10]={"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+    int count=0;
+
+    strcpy(days[6],"Sunday");
+
+    for(int i=0; i<7; i++){
+        if(days[i][0]=='T')
+            count++;
+    }
+
+    printf("%d days starts with T",count);
+
+}
