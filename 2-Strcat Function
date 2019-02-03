@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<string.h>
+#define N 60
+
+int strct(char *s1,char *s2)
+{
+    int length=sizeof(s1)/(*s1);
+    int i=0;
+    for(;;length++,i++)
+    {
+        if(s2[i]=='\0'){
+            s1[length]='\0';
+            break;
+        }
+        s1[length]=s2[i];
+    }
+}
+int main()
+{
+    char ch[N]="hello ";
+    char str[N]="world";
+    strcpoy(ch,str);
+    puts(ch);
+}
+
+
+
+******************* Another Way **********************
+
+#include<stdio.h>
+#include<string.h>
+#define N 60
+
+void strct(char *s1,char *s2)
+{
+    while(*s1!='\0')
+        s1++;
+    while(*s2!='\0'){
+        *s1=*s2;
+        s1++;
+        s2++;
+    }
+    s1='\0';
+}
+int main()
+{
+    char ch[N]="hello ";
+    char str[N]="world";
+    strct(ch,str);
+    puts(ch);
+
+}
