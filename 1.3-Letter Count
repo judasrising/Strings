@@ -20,7 +20,7 @@ int main()
 }
 
 
-/********************************** Whole Program With Pointers *************************
+/********************************** Whole Program With Pointers ************************************
 
 #include<stdio.h>
 #define N 70
