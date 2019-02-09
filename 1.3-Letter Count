@@ -18,3 +18,41 @@ int main()
 
     printf("You have entered %d letters.",letter_count(msg));
 }
+
+
+/********************************** Whole Program With Pointers *************************
+
+#include<stdio.h>
+#define N 70
+
+void read(char *s,int n)
+{
+    char ch;
+    int i=0;
+    while((ch=getchar())!='\n' && i<n){
+        s[i]=ch;
+        i++;
+    }
+    s[++i]='\0';
+}
+
+int letter_count(char str[])
+{
+    int i=0,count=0;
+    for(; str[i]!='\0'; i++){
+        if(str[i]!=' ')
+            count++;
+    }
+    return count;
+}
+
+
+int main()
+{
+    char ch[N];
+    printf("Enter your message: ");
+    read(ch,N);
+    printf("%d letters",letter_count(ch));
+}
+
+*********************************************************/
