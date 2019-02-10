@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define N 70
+
+void convert(char str[])
+{
+    int i=0;
+    for(; str[i]!='\0'; i++)
+    {
+        if(str[i]>=65 && str[i]<=90){
+            str[i]=str[i]+32;
+        }
+    }
+}
+
+int main()
+{
+    char ch[N];
+    printf("Enter your message: ");
+    gets(ch);
+    convert(ch);
+    puts(ch);
+}
