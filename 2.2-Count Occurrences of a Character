@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define N 50
+
+int search(char string[], char key)
+{
+    int count=0,i;
+
+    for(i=0; string[i]!='\0'; i++){
+        if(string[i]==key || string[i]==key-32)
+            count++;
+    }
+    return count;
+}
+int main()
+{
+    char str[N],ch;
+    printf("Input string: ");
+    gets(str);
+    printf("Input character to search: ");
+    ch=getchar();
+    printf("Total occurrences of '%c': %d",ch,search(str,ch));
+}
