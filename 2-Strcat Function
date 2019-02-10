@@ -33,9 +33,9 @@ int main()
 
 void strct(char *s1,char *s2)
 {
-    while(*s1!='\0')
+    while(*s1)  // ASCII value of NULL is 0
         s1++;
-    while(*s2!='\0'){
+    while(*s2){
         *s1=*s2;
         s1++;
         s2++;
