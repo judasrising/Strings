@@ -26,3 +26,40 @@ int main()
     convert(ch);
     puts(ch);
 }
+
+
+
+/***************************************** With Pointers *********************************
+
+#include<stdio.h>
+#define N 50
+
+
+void convert(char str[])
+{
+    char *p;
+    p=str;
+    int i=0;
+    for(; *p!='\0'; p++,i++)
+    {
+        if(*p>=65 && *p<=90)
+            str[i]=*p+32;
+
+        else if(*p>=97 && *p<=122)
+            str[i]=*p-32;
+    }
+}
+
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    gets(msg);
+
+    convert(msg);
+    puts(msg);
+
+}
+
+*************************************************************************************/
