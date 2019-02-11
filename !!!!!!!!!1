@@ -1,0 +1,52 @@
+//look for a word if it is exist
+
+
+#include<stdio.h>
+#define N 50
+
+int search(char str[],char key[])
+{
+    int i,j,result=1;
+
+    for(i=0, j=0; str[i]!='\0'; i++){
+        while(str[i]!=' '){
+            if(str[i]!=key[j]){
+                result=0;
+                break;
+            }
+
+            j++;
+            i++;
+        }
+        if(result==0)
+        {
+            while(str[i])
+                i++;
+        }
+        if(result)
+            return 1;
+
+        result=1;
+
+        j=0;
+
+    }
+
+    return 0;
+}
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    char word[10];
+    gets(msg);
+
+    printf("Enter a word for searching: ");
+    scanf("%s",word);
+
+    if(search(msg,word))
+        printf("exist");
+    else
+        printf("doesn't exist");
+}
