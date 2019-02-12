@@ -1,0 +1,35 @@
+// write read_line function in each of the following ways:
+// a) Have it skip white space before beginning to store input characters.
+// b) Have it stop reading at the first white-space character.
+// c)Have it stop reading at the first new-line character, then store it in the string.
+// d) Have it leave behinf characters that it doesn't have room to store.
+
+
+#include<stdio.h>
+#define N 50
+
+void read_line(char str[])
+{
+    int i=0;
+    char ch;
+
+    while((ch=getchar())==' ');
+    str[i]=ch;
+    i++;
+    while((ch=getchar())!='\n' && i<N-3){
+        if(ch==' ')
+           break;
+        str[i]=ch;
+        i++;
+    }
+    str[i]='\n';
+    str[++i]='\0';
+}
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    read_line(msg);
+    puts(msg);
+}
