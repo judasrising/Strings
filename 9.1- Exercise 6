@@ -1,0 +1,27 @@
+// Write a function censor that modifies a string by reclacig every occurence of foo by xxx.
+// For example "food fool" would become "xxxd xxxl".
+
+#include<stdio.h>
+#define N 50
+
+void censor(char str[])
+{
+    int i;
+    for(i=0; str[i]!='\0'; i++)
+    {
+        if(str[i]=='f' && str[i+1]=='o' && str[i+2]=='o'){
+            str[i]='x';
+            str[++i]='x';
+            str[++i]='x';
+        }
+    }
+}
+
+int main()
+{
+    char msg[N];
+    printf("Enter your message: ");
+    gets(msg);
+    censor(msg);
+    puts(msg);
+}
