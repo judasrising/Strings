@@ -35,19 +35,14 @@ int main()
 #define N 50
 
 
-void convert(char str[])
+void convert(char *p)
 {
-    char *p;
-    p=str;
-    int i=0;
-    for(; *p!='\0'; p++,i++)
-    {
-        if(*p>=65 && *p<=90)
-            str[i]=*p+32;
-
-        else if(*p>=97 && *p<=122)
-            str[i]=*p-32;
-    }
+	for (; *p != '\0'; p++) {
+		if (*p >= 65 && *p <= 90)
+			*p+=32;
+		else if (*p >= 97 && *p <= 122)
+			*p -= 32;
+	}
 }
 
 
