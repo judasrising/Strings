@@ -1,0 +1,23 @@
+#include<stdio.h>
+#define N 50
+
+void copy1(char *s1, const char *s2)
+{
+	for (; *s2 != '\0'; s2++, s1++)
+	{
+		*s1 = *s2;
+	}
+	*s1 = '\0';
+}
+
+
+int main()
+{
+	char str1[N], str2[N];
+
+	printf("Enter your message: ");
+	gets(str1);
+	copy1(str2, str1);
+	puts(str2);
+}
+
