@@ -1,0 +1,37 @@
+//Write a program in C to read a file and remove the spaces between two words of its content.
+
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+#include<stdio.h>
+#include<stdbool.h>
+#define N 50
+
+void no_space(char str[])
+{
+	int i,j;
+	char temp;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] == ' ')
+		{
+			j = i;
+			while (str[j] != '\0') {
+				str[j] = str[j + 1];
+				j++;
+			}
+		}
+
+	}
+
+}
+
+int main()
+{
+	char msg[N];
+	printf("Enter a message: ");
+	gets(msg);
+	no_space(msg);
+	puts(msg);
+	getch();
+}
