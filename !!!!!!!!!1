@@ -50,3 +50,65 @@ int main()
     else
         printf("doesn't exist");
 }
+
+***********************************************************
+
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+#include<stdio.h>
+#include<stdbool.h>
+#define N 50
+
+int search(char str[], char word[])
+{
+	int i, count = 0, length = 0, j;
+	bool control=1;
+	for (i = 0; word[i] != '\0'; length++,i++);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		while (str[i] != ' ') {
+			count++;
+			i++;
+		}
+
+		if (count == length) {
+			i -= count;
+			
+			while (str[i] != ' ') {
+				if (str[i] != word[i]) {
+					control = 0;
+					break;
+				}
+			}
+
+			if (control == 1)
+				return 1;
+		}
+
+		while (str[i] != ' ')
+			i++;
+		if (str[i] == ' ')
+			i++;
+		count = 0;
+	}
+	return 0;
+	
+}
+int main()
+{
+	char msg[N],key[10];
+	printf("Enter your message: ");
+	gets(msg);
+	printf("Enter a word to search: ");
+	scanf("%s", key);
+
+	if (search(msg,key))
+		printf("exist");
+	else
+		printf("does not exist");
+	getch();
+	
+}
+
