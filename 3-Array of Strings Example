@@ -1,20 +1,26 @@
-//Find the days of week which starts with T
-
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 #include<stdio.h>
+#include<stdbool.h>
 #include<string.h>
+#define N 40
+#define MAX 15
+
 
 int main()
 {
-    char days[7][10]={"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
-    int count=0;
+	char students[6][30] = { "Rachel Green","Chandler Bing","Ross Geller",
+	"Monica Geller","Phoebe Buffay","Joey Tribbiani" };
 
-    strcpy(days[6],"Sunday");
+	int i;
+	for (i = 0; i < 6; i++)
+		printf("%s\n", students[i]);
 
-    for(int i=0; i<7; i++){
-        if(days[i][0]=='T')
-            count++;
-    }
+	printf("\nStudents that start with R\n");
+	for (i = 0; i < 6; i++)
+		if (students[i][0] == 'R')
+			printf("%s\n", students[i]);
 
-    printf("%d days starts with T",count);
-
+	getch();
 }
