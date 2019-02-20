@@ -1,0 +1,50 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+#include<stdio.h>
+#define N 50
+
+size_t count_spaces(char *str)
+{
+	int count = 0;
+	for (; *str != '\0'; str++) {
+		if (*str == ' ')
+			count++;
+	}
+	return count;
+}
+
+size_t count_letters(char *s)
+{
+	int word = 0;
+	for (; *s != '\0'; s++)
+	{
+		if ((*s >= 60 && *s < 90) || (*s >= 97 && *s <= 122))
+			word++;
+	}
+	return word;
+}
+
+void get_message(char *str)
+{
+	char ch;
+	int i = 0;
+
+	while ((ch = getchar()) != '\n') {
+		*str = ch;
+		str++;
+	}
+	*str = '\0';
+}
+
+
+int main()
+{
+	char msg[N],word[N];
+	printf("Enter your message: ");
+	get_message(msg);
+	printf("\n%d spaces\n", count_spaces(msg));
+	printf("%d words\n", count_spaces(msg) + 1);
+	printf("%d letters\n", count_letters(msg));
+	getch();
+}
