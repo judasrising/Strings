@@ -29,3 +29,58 @@ int main()
 	acronym(str);
 	getch();
 }
+
+
+****************************** MUCH BETTER *************************************
+
+#define _CRT_SECURE_NO_WARNINGS
+# include<stdio.h>
+# include<stdlib.h>
+#include<string.h>
+#define N 60
+
+char *acronym(char *str)
+{
+	char *acr = malloc(sizeof(char) * 6);
+
+	int i=0;
+
+	if (str[0] >= 97 && str[0] <= 122)
+		acr[i] = *str - 32;
+	else
+		acr[i] = *str;
+
+	i++;
+	str++;
+
+	for (; *str != '\0'; str++)
+	{
+		if (*str == ' ') 
+		{
+			str++;
+			if (*str >= 97 && *str <= 122) {
+				acr[i] = *str - 32;
+				i++;
+			}
+			else
+			{
+				acr[i] = *str;
+				i++;
+			}
+		}
+	}
+
+	acr[i] = '\0';
+	return acr;
+
+}
+
+int main()
+{
+	char msg[N];
+	printf("Enter your message: ");
+	gets(msg);
+	printf("Acronym: %s", acronym(msg));
+
+	getch();
+}
