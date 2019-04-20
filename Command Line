@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+
+int main(int argc, char *argv[])
+{
+	char *planets[] = { "Earth","Jupiter","Saturn","Mercury","Uranus","Mars","Neptune","Venus" };
+	int i, j,check;
+
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0,check=0; j < 8; j++)
+			if (argv[i] == planets[j]) {
+				check = 1;
+				break;
+			}
+		if (check)
+			printf("%s is a planet.\n", argv[i]);
+		else
+			printf("%s is not a planet.\n", argv[i]);
+	}
+
+
+}
